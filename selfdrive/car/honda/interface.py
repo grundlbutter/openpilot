@@ -258,9 +258,9 @@ class CarInterface(CarInterfaceBase):
       ret.wheelbase = 2.7
       ret.centerToFront = ret.wheelbase * 0.39
       ret.steerRatio = 15.0  # 12.58 is spec end-to-end
-      ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]  # TODO: determine if there is a dead zone at the top end
+      ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 2048, 10200], [0, 2048, 3840]]  # TODO: determine if there is a dead zone at the top end
       ret.tireStiffnessFactor = 0.82
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.6], [0.18]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.24], [0.072]]
 
     elif candidate == CAR.HONDA_E:
       ret.mass = 3338.8 * CV.LB_TO_KG
